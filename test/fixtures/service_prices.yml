@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  basic_price: 1
+  bussiness_price_in_percentage: 1
+  first_class_price_in_percentage: 1
+  flight_id: 1
+
+two:
+  basic_price: 1
+  bussiness_price_in_percentage: 1
+  first_class_price_in_percentage: 1
+  flight_id: 1

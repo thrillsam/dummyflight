@@ -1,0 +1,2 @@
+class AireplaneSeatConfig < ApplicationRecord
+end

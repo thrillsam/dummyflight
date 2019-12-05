@@ -1,0 +1,2 @@
+class AirplaneType < ApplicationRecord
+end

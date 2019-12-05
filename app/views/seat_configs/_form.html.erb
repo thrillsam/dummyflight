@@ -1,0 +1,32 @@
+<%= form_with(model: seat_config, local: true) do |form| %>
+  <% if seat_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seat_config.errors.count, "error") %> prohibited this seat_config from being saved:</h2>
+
+      <ul>
+      <% seat_config.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :now_of_rows %>
+    <%= form.number_field :now_of_rows %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_of_seat_in_row %>
+    <%= form.number_field :no_of_seat_in_row %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

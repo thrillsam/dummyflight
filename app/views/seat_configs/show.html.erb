@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @seat_config.category %>
+</p>
+
+<p>
+  <strong>Now of rows:</strong>
+  <%= @seat_config.now_of_rows %>
+</p>
+
+<p>
+  <strong>No of seat in row:</strong>
+  <%= @seat_config.no_of_seat_in_row %>
+</p>
+
+<%= link_to 'Edit', edit_seat_config_path(@seat_config) %> |
+<%= link_to 'Back', seat_configs_path %>

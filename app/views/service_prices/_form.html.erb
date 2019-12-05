@@ -1,0 +1,37 @@
+<%= form_with(model: service_price, local: true) do |form| %>
+  <% if service_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_price.errors.count, "error") %> prohibited this service_price from being saved:</h2>
+
+      <ul>
+      <% service_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :basic_price %>
+    <%= form.number_field :basic_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bussiness_price_in_percentage %>
+    <%= form.number_field :bussiness_price_in_percentage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_class_price_in_percentage %>
+    <%= form.number_field :first_class_price_in_percentage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flight_id %>
+    <%= form.number_field :flight_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

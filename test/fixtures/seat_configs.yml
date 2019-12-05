@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  now_of_rows: 1
+  no_of_seat_in_row: 1
+
+two:
+  category: MyString
+  now_of_rows: 1
+  no_of_seat_in_row: 1

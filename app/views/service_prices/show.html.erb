@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Basic price:</strong>
+  <%= @service_price.basic_price %>
+</p>
+
+<p>
+  <strong>Bussiness price in percentage:</strong>
+  <%= @service_price.bussiness_price_in_percentage %>
+</p>
+
+<p>
+  <strong>First class price in percentage:</strong>
+  <%= @service_price.first_class_price_in_percentage %>
+</p>
+
+<p>
+  <strong>Flight:</strong>
+  <%= @service_price.flight_id %>
+</p>
+
+<%= link_to 'Edit', edit_service_price_path(@service_price) %> |
+<%= link_to 'Back', service_prices_path %>
