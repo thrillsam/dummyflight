@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_142158) do
+ActiveRecord::Schema.define(version: 2019_12_05_144852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2019_12_05_142158) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.float "amount"
+    t.float "tax_amount"
+    t.float "total_amount"
+    t.integer "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "seat_configs", force: :cascade do |t|
     t.integer "category_id"
     t.integer "now_of_rows"
@@ -77,10 +86,27 @@ ActiveRecord::Schema.define(version: 2019_12_05_142158) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "service_prices", force: :cascade do |t|
+    t.integer "basic_price"
+    t.integer "bussiness_price_in_percentage"
+    t.integer "first_class_price_in_percentage"
+    t.integer "flight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taxes", force: :cascade do |t|
+    t.string "name"
+    t.float "percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

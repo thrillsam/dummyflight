@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'dashboard', to: "dashboard#index"
+  get 'admin_dashboard', to: "admin_dashboard#index"
+  get 'login', to: "login#new"
+  post 'login', to: "login#create"
+  delete 'logout', to: "login#destroy"
+  get 'home/index'
   resources :service_prices
   resources :flights
   resources :users
@@ -6,5 +12,5 @@ Rails.application.routes.draw do
   resources :seat_configs
   resources :airplane_types
   resources :airplanes
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "home#index"
 end

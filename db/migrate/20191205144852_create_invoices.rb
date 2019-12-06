@@ -4,7 +4,7 @@ class CreateInvoices < ActiveRecord::Migration[5.2]
       t.float :amount
       t.float :tax_amount
       t.float :total_amount
-      t.integer :user_id
+      t.integer :booking_id
 
       t.timestamps
     end
