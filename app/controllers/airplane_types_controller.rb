@@ -1,5 +1,7 @@
 class AirplaneTypesController < ApplicationController
+  layout :find_layout
   before_action :set_airplane_type, only: [:show, :edit, :update, :destroy]
+  power :admin_only
 
   # GET /airplane_types
   # GET /airplane_types.json

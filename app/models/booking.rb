@@ -18,4 +18,8 @@ class Booking < ApplicationRecord
 	belongs_to :user
 	belongs_to :flight
 	belongs_to :category
+
+	def generate_pnr(klass)
+		DateTime.now.strftime('%Q').last(7) << klass
+	end
 end

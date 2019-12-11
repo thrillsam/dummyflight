@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
+  layout :find_layout
   before_action :set_city, only: [:show, :edit, :update, :destroy]
+  power :admin_only
 
   # GET /cities
   # GET /cities.json

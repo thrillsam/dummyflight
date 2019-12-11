@@ -1,0 +1,9 @@
+<%= form_tag flight_seat_booking_path do |f| %>
+	<% (1..@availble_seats.now_of_rows*@availble_seats.no_of_seat_in_row).each_slice(@availble_seats.no_of_seat_in_row) do |list| %>
+		<% list.each do |i| %>
+			<%= check_box_tag 'seats', "#{i}", false, {disabled: @booked_seats.include?(i), class: 'a'} %>
+		<% end %>
+	</br>
+	<% end %>
+	<%= submit_tag "Book" %>
+<% end %>	

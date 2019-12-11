@@ -15,7 +15,7 @@
   <tbody>
     <% @seat_configs.each do |seat_config| %>
       <tr>
-        <td><%= seat_config.category %></td>
+        <td><%= seat_config.category.name %></td>
         <td><%= seat_config.now_of_rows %></td>
         <td><%= seat_config.no_of_seat_in_row %></td>
         <td><%= link_to 'Show', seat_config %></td>

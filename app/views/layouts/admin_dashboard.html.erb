@@ -17,7 +17,7 @@
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
           <li class="nav-item text-nowrap">
-            <%= link_to "Sign out", logout_url, method: :delete, data: { confirm: 'Are you sure?' }%>
+            <%= link_to "Sign out", logout_url, method: :delete, data: { confirm: 'Are you sure?' } if current_user.present? %>
           </li>
         </ul>
       </nav>
@@ -28,39 +28,45 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/airplane_types">
                   <span data-feather="file"></span>
-                  Orders
+                  AirplaneType
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/airplanes">
                   <span data-feather="shopping-cart"></span>
-                  Products
+                  Airplane
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/category">
                   <span data-feather="users"></span>
-                  Customers
+                  Category
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/seat_configs">
+                  <span data-feather="users"></span>
+                  Seat Config
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/seat_configs">
+                  <span data-feather="users"></span>
+                  Map Seat Config to Airplane
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/flights">
                   <span data-feather="bar-chart-2"></span>
-                  Reports
+                  Flights
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/bookings">
                   <span data-feather="layers"></span>
-                  Integrations
+                  Bookings
                 </a>
               </li>
             </ul>

@@ -1,5 +1,6 @@
 class ServicePricesController < ApplicationController
   before_action :set_service_price, only: [:show, :edit, :update, :destroy]
+  power :admin_only
 
   # GET /service_prices
   # GET /service_prices.json

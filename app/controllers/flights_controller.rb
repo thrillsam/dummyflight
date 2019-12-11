@@ -1,5 +1,8 @@
 class FlightsController < ApplicationController
-  before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  layout :find_layout
+  before_action :set_flight, only: [:show, :edit, :update, :destroy, :seat_availablity]
+  power :admin_only, only: [:index, :show, :new, :create, :update, :destroy]
+
 
   # GET /flights
   # GET /flights.json
@@ -61,10 +64,19 @@ class FlightsController < ApplicationController
     end
   end
 
+  def seat_availablity
+    @availble_seats = @flight.seat_configs.find_by_klass(params[:pnr].last)
+    @booked_seats   = @flight.bookings.where(category_id: Category.starts_with(params[:pnr].last)&.id).pluck(:seat_numbers)
+  end
+
+  def seat_booking
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
-      @flight = Flight.find(params[:id])
+      @flight = Flight.find(params[:id] || params[:flight_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

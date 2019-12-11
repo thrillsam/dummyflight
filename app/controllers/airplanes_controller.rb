@@ -1,6 +1,8 @@
 class AirplanesController < ApplicationController
+  layout :find_layout
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
-
+  power :admin_only
+  
   # GET /airplanes
   # GET /airplanes.json
   def index

@@ -11,7 +11,7 @@
 
 class Airplane < ApplicationRecord
 	belongs_to :airplane_type
-	
+
 	has_many :airplane_seat_configs
-	has_many :seat_configs, through: airplane_seat_configs
+	has_many :seat_configs, through: :airplane_seat_configs
 end

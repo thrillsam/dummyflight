@@ -6,9 +6,7 @@ class AuthenticateUser
   end
 
   def call
-    if user
-      user.role.eql?('admin') ? 'admin_dashboard' : 'dashboard'
-    end
+    user
   end
 
   private

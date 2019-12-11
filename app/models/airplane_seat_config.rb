@@ -9,7 +9,7 @@
 #  updated_at     :datetime         not null
 #
 
-class AireplaneSeatConfig < ApplicationRecord
+class AirplaneSeatConfig < ApplicationRecord
 	belongs_to :airplane
 	belongs_to :seat_config
 end

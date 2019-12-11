@@ -14,5 +14,11 @@ class SeatConfig < ApplicationRecord
 	belongs_to :category
 	
 	has_many :airplane_seat_configs
-	has_many :airplanes, through: airplane_seat_configs
+	has_many :airplanes, through: :airplane_seat_configs
+
+	class << self
+		def find_by_klass(klass)
+			find_by(category_id: Category.starts_with(klass)&.id)
+		end
+	end
 end

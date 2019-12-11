@@ -5,8 +5,8 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.integer :flight_id
       t.date :flying_on
       t.string :pnr
-      t.integer :no_of_seats
-      t.integer :seat_numbers
+      t.integer :parent_id
+      t.integer :seat_number
       t.integer :category_id
 
       t.timestamps

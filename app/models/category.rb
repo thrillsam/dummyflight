@@ -10,4 +10,10 @@
 
 class Category < ApplicationRecord
 	has_many :seat_configs
+
+	class << self
+		def starts_with(klass)
+			where("name LIKE ?", "#{klass}%").last
+		end
+	end
 end

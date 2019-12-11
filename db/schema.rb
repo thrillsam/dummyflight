@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_144852) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "aireplane_seat_configs", force: :cascade do |t|
+  create_table "airplane_seat_configs", force: :cascade do |t|
     t.integer "airplane_id"
     t.integer "seat_config_id"
     t.datetime "created_at", null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2019_12_05_144852) do
     t.integer "flight_id"
     t.date "flying_on"
     t.string "pnr"
-    t.integer "no_of_seats"
-    t.integer "seat_numbers"
+    t.integer "parent_id"
+    t.integer "seat_number"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_144852) do
   end
 
   create_table "seat_configs", force: :cascade do |t|
+    t.string "name"
     t.integer "category_id"
     t.integer "now_of_rows"
     t.integer "no_of_seat_in_row"

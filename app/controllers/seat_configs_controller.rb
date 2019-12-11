@@ -1,5 +1,7 @@
 class SeatConfigsController < ApplicationController
+  layout :find_layout
   before_action :set_seat_config, only: [:show, :edit, :update, :destroy]
+  power :admin_only
 
   # GET /seat_configs
   # GET /seat_configs.json

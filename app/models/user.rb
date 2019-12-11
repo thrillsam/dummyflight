@@ -13,6 +13,17 @@
 
 class User < ApplicationRecord
 	has_secure_password
+	
+	has_many :bookings
+	has_many :flights, through: :bookings
 
 	enum role: [:admin, :customer]
+
+	def is_admin?
+		self.role == 'admin'
+	end
+
+	def find_my_flights
+		self.flights
+	end
 end
