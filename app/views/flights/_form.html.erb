@@ -18,17 +18,17 @@
 
   <div class="field">
     <%= form.label :origin_id %>
-    <%= form.text_field :origin_id %>
+    <%= form.collection_select :origin_id, City.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :destination_id %>
-    <%= form.number_field :destination_id %>
+    <%= form.collection_select :destination_id, City.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :airplane_id %>
-    <%= form.number_field :airplane_id %>
+    <%= form.collection_select :airplane_id, Airplane.all, :id, :name %>
   </div>
 
   <div class="actions">

@@ -71,6 +71,6 @@ class SeatConfigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def seat_config_params
-      params.require(:seat_config).permit(:category, :now_of_rows, :no_of_seat_in_row)
+      params.require(:seat_config).permit(:name, :category_id, :now_of_rows, :no_of_seat_in_row)
     end
 end

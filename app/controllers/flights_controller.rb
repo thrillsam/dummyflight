@@ -66,7 +66,8 @@ class FlightsController < ApplicationController
 
   def seat_availablity
     @availble_seats = @flight.seat_configs.find_by_klass(params[:pnr].last)
-    @booked_seats   = @flight.bookings.where(category_id: Category.starts_with(params[:pnr].last)&.id).pluck(:seat_numbers)
+    @booked_seats   = @flight.bookings.where(category_id: Category.starts_with(params[:pnr].last)&.id).pluck(:seat_number)
+    binding.pry
   end
 
   def seat_booking

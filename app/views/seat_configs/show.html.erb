@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @seat_config.name %>
+</p>
+<p>
   <strong>Category:</strong>
-  <%= @seat_config.category %>
+  <%= @seat_config.category.name %>
 </p>
 
 <p>

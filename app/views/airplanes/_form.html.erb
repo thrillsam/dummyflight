@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :airplane_type_id %>
-    <%= form.number_field :airplane_type_id %>
+    <%= form.collection_select :airplane_type_id, AirplaneType.all, :id, :name %>
   </div>
 
   <div class="actions">

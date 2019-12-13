@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Category</th>
       <th>Now of rows</th>
       <th>No of seat in row</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @seat_configs.each do |seat_config| %>
       <tr>
+        <td><%= seat_config.name %></td>
         <td><%= seat_config.category.name %></td>
         <td><%= seat_config.now_of_rows %></td>
         <td><%= seat_config.no_of_seat_in_row %></td>
