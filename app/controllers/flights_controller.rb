@@ -47,7 +47,7 @@ class FlightsController < ApplicationController
       if @flight.update(flight_params)
         format.html { redirect_to @flight, notice: 'Flight was successfully updated.' }
         format.json { render :show, status: :ok, location: @flight }
-      else
+      else  
         format.html { render :edit }
         format.json { render json: @flight.errors, status: :unprocessable_entity }
       end
@@ -65,13 +65,13 @@ class FlightsController < ApplicationController
   end
 
   def seat_availablity
-    @availble_seats = @flight.seat_configs.find_by_klass(params[:pnr].last)
-    @booked_seats   = @flight.bookings.where(category_id: Category.starts_with(params[:pnr].last)&.id).pluck(:seat_number)
-    binding.pry
+    @booked_seat = Booking.find_by(pnr: params[:pnr])
+    @seat_config = @flight.seat_configs.find_by_klass(params[:pnr].last)
   end
 
   def seat_booking
-    
+    @booking = Booking.find(params[:booking_id])
+    @booking.update(seat_number: params[:seats])
   end
 
   private

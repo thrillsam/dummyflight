@@ -1,7 +1,8 @@
 <%= form_tag flight_seat_booking_path do |f| %>
-	<% (1..@availble_seats.now_of_rows*@availble_seats.no_of_seat_in_row).each_slice(@availble_seats.no_of_seat_in_row) do |list| %>
+	<%= hidden_field_tag :booking_id, @booked_seat.id %>
+	<% (1..@seat_config.now_of_rows*@seat_config.no_of_seat_in_row).each_slice(@seat_config.no_of_seat_in_row) do |list| %>
 		<% list.each do |i| %>
-			<%= check_box_tag 'seats', "#{i}", false, {disabled: @booked_seats.include?(i), class: 'a'} %>
+			<%= check_box_tag 'seats', "#{i}", false, {disabled: @booked_seat.seat_number.eql?(i), class: 'booked'} %>
 		<% end %>
 	</br>
 	<% end %>

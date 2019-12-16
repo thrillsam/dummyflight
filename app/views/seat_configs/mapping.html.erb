@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Seat Configs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seat_configs.each do |seat_config| %>
+      <tr>
+        <td><%= link_to seat_config.name, with_airplane_seat_config_path(seat_config.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

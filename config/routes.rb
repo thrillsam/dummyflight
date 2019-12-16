@@ -20,7 +20,15 @@ Rails.application.routes.draw do
   resources :service_prices
   resources :users
   resources :cities
-  resources :seat_configs
+  resources :seat_configs do
+    collection do 
+      get :mapping
+    end
+    member do
+      get :with_airplane
+      post :map_with_airplane
+    end
+  end
   resources :airplane_types
   resources :airplanes
   root "home#index"

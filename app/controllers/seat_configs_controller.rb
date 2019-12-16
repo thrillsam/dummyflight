@@ -1,6 +1,6 @@
 class SeatConfigsController < ApplicationController
   layout :find_layout
-  before_action :set_seat_config, only: [:show, :edit, :update, :destroy]
+  before_action :set_seat_config, only: [:show, :edit, :update, :destroy, :map_with_airplane]
   power :admin_only
 
   # GET /seat_configs
@@ -61,6 +61,14 @@ class SeatConfigsController < ApplicationController
       format.html { redirect_to seat_configs_url, notice: 'Seat config was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def mapping
+    @seat_configs = SeatConfig.all
+  end
+  
+  def map_with_airplane
+    @seat_config.create_maping(params[:airplane_id])
   end
 
   private
